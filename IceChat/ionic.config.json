@@ -1,0 +1,7 @@
+{
+  "name": "IceChat",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
