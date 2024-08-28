@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
+
+.new-amsterdam-regular {
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: "New Amsterdam", sans-serif;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin: 0;
+}
+
+h3 {
+  font-size: 1.6em;
+  margin: 0;
+}
+
+ion-header{
+  gap: 8px;
+  align-items: center;
+  display: flex;
+  box-shadow: none;
+  margin-bottom: 40px;
+  padding: 12px;
+}
+
+ion-header ion-img{
+  width: 15%;
+}
+
+ion-footer ion-button {
+  font-size: 1.5em;
+}
+
+ion-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  width: 80%;
+}
+
+ion-card ion-card-content{
+    text-align: center;
+}
+
+ion-card ion-card-content h1{
+    color: white;
+}
+
+ion-card ion-card-content h2{
+    font-size: 1.2em;
+}
+
+ion-avatar {
+  border: solid 3px #5ac8ee;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(199, 199, 199);
+}
+
+ion-footer ion-button{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}

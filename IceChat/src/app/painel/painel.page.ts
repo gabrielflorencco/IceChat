@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-painel',
@@ -8,10 +10,23 @@ import { Component, OnInit } from '@angular/core';
 export class PainelPage implements OnInit {
 
   nome:any;
-  constructor() { }
+  email:any;
+  
+  constructor(private rota: Router) { }
 
   ngOnInit() {
+  }
+  ionViewWillEnter(){
     this.nome = localStorage.getItem("nome");
+    this.email = localStorage.getItem("email");
   }
 
+  sair(){
+    localStorage.removeItem("nome");
+    localStorage.removeItem("email");
+    localStorage.removeItem("foto");
+    localStorage.removeItem("codigo");
+
+    this.rota.navigateByUrl("/login");
+  }
 }

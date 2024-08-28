@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ToastController } from '@ionic/angular';
 
 import { Router } from '@angular/router';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -17,13 +19,32 @@ export class LoginPage implements OnInit {
   
   dados:any = [];
 
-  constructor(private http: HttpClient, private rota: Router) { }
+  constructor(private http: HttpClient, private rota: Router, private toast: ToastController) { }
 
   ngOnInit() {
   }
 
+  async chamarToast(position: 'top' | 'middle' | 'bottom', mensagem: string) {
+    const toast = await this.toast.create({
+      message: mensagem,
+      duration: 1500,
+      position: position,
+    });
+
+    await toast.present();
+  }
+
   logar(){
-    
+    if (this.email === undefined || this.email === "" || this.email === null){
+      this.chamarToast('bottom', "É necessário digitar um email, amigo!")
+      return;
+    }
+
+    if (this.senha === undefined || this.senha === "" || this.senha === null){
+      this.chamarToast('bottom', "É necessário digitar uma senha, amigo!")
+      return;
+    }
+
     this.http.get(this.link + "email="+this.email+ "&senha="+this.senha).subscribe(data=>{
       this.dados = data;
 
@@ -35,12 +56,11 @@ export class LoginPage implements OnInit {
       console.log(this.dados[0]['status'])
       if (this.dados[0]['status'] == "ok")
       {
-        this.rota.navigateByUrl("/painel")
+        this.rota.navigateByUrl("/painel");
       }
-      else
-      {
-        alert("não ok");
-      }
+    },
+    error => {
+      this.chamarToast('bottom', "Não foi possivel realizar o login!");
     })
   }
 }

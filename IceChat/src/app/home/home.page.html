@@ -1,25 +1,42 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="tertiary">
-    <ion-title>
-      Cadastro
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-back-button slot="start"></ion-back-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div id="container">
-    <strong>Preencha todos os campos</strong>
-    <ion-list lines="none">
-      <ion-item>
-        <ion-input [(ngModel)]="nome" placeholder="Digite o nome"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input [(ngModel)]="email" placeholder="Digite o email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input [(ngModel)]="senha" type="password" placeholder="Digite uma senha"></ion-input>
-      </ion-item>
-      <ion-button  color="tertiary" expand="block" (click)="gravar()">Cadastrar</ion-button>
-    </ion-list>
+<ion-content [fullscreen]="true" color="primary">
+  <div id="container" color="primary">
+    <ion-header>
+      <ion-img src="../../assets/logo.png"></ion-img>
+      <div>
+        <h2>IceChat</h2>
+        <p>O Chat mais frio do Brasil 🥶</p>
+      </div>
+    </ion-header>
+    
+    <div class="inputs">
+      <h1>Cadastro</h1>
+
+      <div>
+        <ion-label>Nome:</ion-label>
+        <ion-input [(ngModel)]="nome" placeholder="Digite seu nome"></ion-input>
+      </div>
+
+      <div>
+        <ion-label>Email:</ion-label>
+        <ion-input [(ngModel)]="email" placeholder="Digite o seu melhor email"></ion-input>
+      </div>
+
+      <div>
+        <ion-label>Senha:</ion-label>
+        <ion-input [(ngModel)]="senha" type="password" placeholder="Digite uma senha">
+          <ion-input-password-toggle slot="end" showIcon="eye" color="light"></ion-input-password-toggle>
+        </ion-input>
+      </div>
+    </div>
+    
+    <div class="botoes">
+      <ion-button class="botao" expand="block" (click)="gravar()">Cadastrar</ion-button>
+    </div>
   </div>
 </ion-content>

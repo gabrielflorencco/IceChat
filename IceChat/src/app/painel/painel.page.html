@@ -1,10 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>painel</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-
-  <h1>{{ nome }}</h1>
+<ion-content [fullscreen]="true" color="primary">
+  <div id="container" color="primary">
+    <ion-header>
+      <ion-img src="../../assets/logo.png"></ion-img>
+      <div>
+        <h2>IceChat</h2>
+      </div>
+    </ion-header>
+    
+    <ion-card class="">
+      <ion-card-header>
+        <ion-avatar>
+          <img src="../../assets/john-marston.jpg" alt="Perfil do guerreiro">
+        </ion-avatar>
+      </ion-card-header>
+      <ion-card-content>
+        <h1>{{ nome }}</h1>
+        <h2>{{ email }}</h2>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
+
+<ion-footer>
+  <ion-button (click)="sair()" expand="full" color="danger">Sair</ion-button>
+</ion-footer>
