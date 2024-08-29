@@ -49,7 +49,6 @@ export class HomePage {
 
     localStorage.setItem("nome",this.nome);
     localStorage.setItem("email",this.email);
-    localStorage.setItem("foto",this.senha);
 
     this.rota.navigateByUrl("/painel");
   }
