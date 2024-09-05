@@ -10,7 +10,12 @@
     <ion-card color="dark" class="">
       <ion-card-header>
         <ion-avatar>
-          <img src="../../assets/john-marston.jpg" alt="Perfil do guerreiro">
+          <img [src]="foto" alt="Perfil do guerreiro">
+          <ion-fab>
+            <ion-fab-button (click)="tirarFoto()" color="secondary">
+              <ion-icon name="pencil"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
         </ion-avatar>
       </ion-card-header>
       <ion-card-content>

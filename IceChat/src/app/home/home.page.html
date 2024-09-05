@@ -18,13 +18,24 @@
       <h1>Cadastro</h1>
 
       <div>
+        <ion-avatar class="perfil">
+          <ion-img [src]="foto"></ion-img>
+          <ion-fab>
+            <ion-fab-button (click)="tirarFoto()" color="secondary">
+              <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+        </ion-avatar>
+      </div>
+
+      <div>
         <ion-label>Nome:</ion-label>
         <ion-input [(ngModel)]="nome" placeholder="Digite seu nome"></ion-input>
       </div>
 
       <div>
         <ion-label>Email:</ion-label>
-        <ion-input [(ngModel)]="email" placeholder="Digite o seu melhor email"></ion-input>
+        <ion-input type="email" [(ngModel)]="email" placeholder="Digite o seu melhor email"></ion-input>
       </div>
 
       <div>

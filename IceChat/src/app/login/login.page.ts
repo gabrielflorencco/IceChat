@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ToastController } from '@ionic/angular';
-
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs';
 
@@ -16,7 +15,7 @@ export class LoginPage implements OnInit {
   senha: any;
 
   link: any = "http://localhost/aplicativo/select.php?";
-  
+  foto: any = "../../assets/placeholder-perfil.png";
   dados:any = [];
 
   constructor(private http: HttpClient, private rota: Router, private toast: ToastController) { }
@@ -51,7 +50,7 @@ export class LoginPage implements OnInit {
       localStorage.setItem("codigo",this.dados[0]['codigo']);
       localStorage.setItem("nome",this.dados[0]['nome']);
       localStorage.setItem("email",this.dados[0]['email']);
-      localStorage.setItem("foto",this.dados[0]['foto']);
+      // localStorage.setItem("foto",this.dados[0]['foto']);
 
       console.log(this.dados[0]['status'])
       if (this.dados[0]['status'] == "ok")
