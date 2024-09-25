@@ -40,11 +40,6 @@ export class HomePage {
       return;
     }
 
-    if (this.testEmailAddress(this.email)){
-      this.chamarToast('bottom', "É necessário digitar um email válido, amigo!")
-      return;
-    }
-
     if (this.senha === undefined || this.senha === "" || this.senha === null){
       this.chamarToast('bottom', "É necessário digitar uma senha, amigo!")
       return;
@@ -60,20 +55,6 @@ export class HomePage {
 
     this.rota.navigateByUrl("/painel");
   }
-
-  testEmailAddress(emailToTest: any) {
-    // check for @
-    var atSymbol = emailToTest.indexOf("@");
-    if(atSymbol < 1) return false;
-
-    var dot = emailToTest.indexOf(".");
-    if(dot <= atSymbol + 2) return false;
-
-    // check that the dot is not at the end
-    if (dot === emailToTest.length - 1) return false;
-
-    return true;
-}
 
   tirarFoto(){
     const takePicture = async () => {
